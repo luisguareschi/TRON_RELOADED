@@ -37,7 +37,7 @@ class Game:
             pyxel.quit()
 
         if self.state == 'intro':
-            if pyxel.btnp(pyxel.KEY_KP_ENTER):
+            if pyxel.btnp(pyxel.KEY_SPACE):
                 pyxel.play(0, 1, loop=False)
                 self.state = 'load_match'
             if self.title_time == 2:
@@ -92,7 +92,7 @@ class Game:
             self.total_game_time = 0
             self.title_time = 0
             winsound.PlaySound(None, winsound.SND_ASYNC)
-            if pyxel.btnp(pyxel.KEY_ENTER):
+            if pyxel.btnp(pyxel.KEY_SPACE):
                 pyxel.play(0, 1, loop=False)
                 self.state = 'load_menu'
                 self.bluebike.lives, self.redbike.lives = 3, 3
@@ -119,7 +119,7 @@ class Game:
                 yi += 16
                 yii += 16
 
-            pyxel.text(50, 125 + 10, 'PRESS ENTER TO START', col=7)
+            pyxel.text(50, 125 + 10, 'PRESS SPACE TO START', col=7)
             pyxel.text(50, 135 + 10, 'PRESS Q TO QUIT', col=7)
             pyxel.blt(95, 100, 0, 0, 64, 16 * 4, 16, colkey=False)
 
@@ -167,7 +167,7 @@ class Game:
                 pyxel.text(110,120, 'BLUE WINS!', col=1)
             else:
                 pyxel.text(110, 120, 'RED WINS!', col=8)
-            pyxel.text(70, 140, 'PRESS ENTER TO GO TO MAIN MENU', col=7)
+            pyxel.text(70, 140, 'PRESS SPACE TO GO TO MAIN MENU', col=7)
             pyxel.text(70, 160, 'PRESS Q TO GO TO EXIT GAME', col=7)
 
 

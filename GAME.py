@@ -27,7 +27,7 @@ class Game:
     # INTRO, GAME, OVER
 
     def __init__(self):
-        pyxel.init(256, 256, caption='TRON')
+        pyxel.init(256, 256, title='TRON')
         pyxel.load("my_resource.pyxres")
         pyxel.run(self.update, self.draw)
 
@@ -37,7 +37,7 @@ class Game:
             pyxel.quit()
 
         if self.state == 'intro':
-            if pyxel.btnp(pyxel.KEY_ENTER):
+            if pyxel.btnp(pyxel.KEY_KP_ENTER):
                 pyxel.play(0, 1, loop=False)
                 self.state = 'load_match'
             if self.title_time == 2:
